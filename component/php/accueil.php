@@ -9,11 +9,25 @@
 </head>
 <body>
     <?php
+
+    $dbFile = '../db/data.db';
+
+    $db = new SQLite3($dbFile);
+    
+    $query = "SELECT pseudo, email, mdp, image FROM utilisateur";
+    $result = $db->query($query);
+    
+    $data = array();
+    while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+        $data[] = $row;
+    }
+    
+    $db->close();
+
+
     include "header.php";
     include "nav.php";
     include "footer.php";
-
-    //$pdo = new PDO('db:/component/db/data.db');
     
 
 
@@ -37,7 +51,7 @@
         }
     }
 
-    $Person1 = new User("Link", "https://wallpapers-clan.com/wp-content/uploads/2023/11/zelda-link-sword-aesthetic-desktop-wallpaper-preview.jpg", "C'est link quoi");
+    $Person1 = new User($data[0]['pseudo'], $data[0]['image'], $data[0]['email']);
     $Person1->createCard();
 
 $equipe1 = 'Paris saint germain';
