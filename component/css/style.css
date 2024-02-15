@@ -18,3 +18,14 @@ body {
 *{
     transition: 1s;
 }
+
+.profile{
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+.profile > img{
+    height: 100px;
+    width: 100px;
+}
