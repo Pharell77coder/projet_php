@@ -61,6 +61,11 @@ if ($match[1]['score'][0] > $match[1]['score'][1]){
 } else if($match[1]['score'][0] < $match[1]['score'][1]){
     echo 'Vainqueur : '.$match[1]['ext'];
 }
+
+// Cookies
+$CookieName = "Tik";
+$CookieValue = "Yoyo";
+setcookie($CookieName, $CookieValue, time() + (86400 * 30));
 ?>
     <main id="main"></main>
     <script src="../js/accueil.js"></script>
