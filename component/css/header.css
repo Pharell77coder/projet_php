@@ -1,0 +1,11 @@
+header {
+	background-color: red;
+	color: #fff;
+	padding: 20px;
+}
+
+header:hover {
+	background-color: #fff;
+	color: red;
+	padding: 30px;
+}
