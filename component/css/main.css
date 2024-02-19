@@ -19,12 +19,14 @@ body {
     border-radius: 1rem;
     width: 18rem;
     border: solid 1px #ddd;
+    height: 7rem;
 }
 .profile:hover{
     background-color: #333;
     border: solid 1px #333;
     padding: 2rem;
     color: #eee;
+    height: 16rem;
 }
 
 .profile > img{

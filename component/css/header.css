@@ -1,6 +1,22 @@
 header {
 	background-color: red;
 	color: #fff;
+	padding: 1rem;
+}
+
+header:hover {
+	background-color: #fff;
+	color: black;
+	padding: 2rem;
+}
+
+header:hover > p{
+	float: right;
+}
+/*
+header {
+	background-color: red;
+	color: #fff;
 	padding: 20px;
 }
 
@@ -9,3 +25,8 @@ header:hover {
 	color: red;
 	padding: 30px;
 }
+
+header:hover > p{
+	float: right;
+}
+*/
