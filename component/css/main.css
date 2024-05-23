@@ -1,14 +1,6 @@
 html {
-    /*scroll*/
     scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-}
-
-*{
-    transition: 1s;
+    display: flex;
 }
 
 .profile{
@@ -24,21 +16,13 @@ body {
 .profile:hover{
     background-color: #333;
     border: solid 1px #333;
-    padding: 2rem;
-    color: #eee;
-    height: 16rem;
 }
 
 .profile > img{
     float: right;
-    height: 6rem;
-    width: 6rem;
-    border-radius: 50%;
-}
-
-.profile:hover > img{
     height: 7rem;
     width: 7rem;
     border-radius: 1rem;
 }
+
 

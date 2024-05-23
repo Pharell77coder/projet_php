@@ -1,8 +1,6 @@
-"use strict";
-
 const navData = [
     { title: 'accueil'},
-    { title: 'match'},
+    { title: 'equipe'},
     { title: 'calendrier'},
     { title: 'classement'}
 ];

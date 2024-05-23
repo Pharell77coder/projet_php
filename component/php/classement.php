@@ -8,7 +8,9 @@
 
     include "include/header.php";
     include "include/nav.php";
-    include "include/footer.php";
     ?>
+    <main class="main" id="main"></main>
+    <?php include_once "include/footer.php";?>
+    <script src="../js/classement.js"></script>
 </body>
 </html>

@@ -1,3 +1,1 @@
-"use strict";
-
-const Header= document.getElementById('footer').innerHTML = '<p>copyright</p>';
+const Footer = document.getElementById('footer').innerHTML = ``;
