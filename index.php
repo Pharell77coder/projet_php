@@ -10,10 +10,5 @@
 </head>
 <body>
     controle + f5
-    <?php
-        require_once "component/php/include/header.php";
-        require_once "component/php/include/nav.php";
-    ?>
-    <?php require_once "component/php/include/footer.php";?>
 </body>
 </html>

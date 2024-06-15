@@ -1,0 +1,333 @@
+$color_1: #fff;
+$color_2: #ff0000;
+$color_3: #201f2b;
+$color_4: #f2f2f2;
+$color_5: #9092a9;
+$font-family_1: "Poppins", sans-serif;
+$background-color_1: #f4f4fb;
+$background-color_2: #fff;
+$background-color_3: #ff0000;
+$background-color_4: #f8f8f8;
+$background-color_5: transparent;
+$background-color_6: #f8f8fb;
+$background-color_7: #ff7e7e;
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	font-family: $font-family_1;
+}
+body {
+	background-color: $background-color_1;
+}
+h2 {
+	font: 18px;
+	padding: 15px 0;
+	>span {
+		font-size: 14px;
+	}
+}
+.header {
+	display: flex;
+	position: fixed;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 55px;
+	top: 0;
+	left: 0;
+	background-color: $background-color_2;
+	z-index: 2;
+	padding-left: 6rem;
+}
+.profile {
+	display: flex;
+	width: 32%;
+	max-width: 200px;
+	justify-content: space-around;
+	align-items: center;
+}
+.profile-image {
+	width: 30px;
+	height: 30px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+.profile-name {
+	font-size: 0.9rem;
+	margin-left: -20px;
+}
+.side-toggle {
+	position: fixed;
+	z-index: 2;
+	top: 12.5px;
+	left: 25px;
+	float: right;
+	font-size: 20px;
+	cursor: pointer;
+}
+#toggle {
+	display: none;
+	&:checked {
+		~ {
+			.nav {
+				width: 70px;
+				.nav-menu {
+					>p {
+						display: none;
+					}
+				}
+			}
+			main {
+				padding: 6rem 2rem 2rem 6rem;
+			}
+		}
+	}
+}
+.nav {
+	position: fixed;
+	height: 100%;
+	width: 200px;
+	left: 0;
+	top: 0;
+	padding: 80px 0 200px 0;
+	color: $color_1;
+	background-color: $background-color_3;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+.nav-menu {
+	display: flex;
+	align-items: center;
+	padding: 15px 25px;
+	width: 100%;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	>span {
+		font-size: 25px;
+		padding-right: 30px;
+	}
+	&:hover {
+		color: $color_2;
+		background-color: $background-color_4;
+	}
+}
+main {
+	min-height: 100%;
+	padding: 6rem 1rem 2rem 14rem;
+	color: $color_3;
+}
+.dashboard-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	gap: 1rem;
+	grid-template-areas: "total1 total2 total3 total4" "detail detail detail customer" "detail detail detail customer";
+}
+.card {
+	background-color: $background-color_2;
+	padding: 1rem;
+	border-radius: 10px;
+}
+.total1 {
+	grid-area: total1;
+	background-color: $background-color_3;
+	color: $color_1;
+	transition: all 1s ease-in;
+	&:hover {
+		background-color: $background-color_2;
+		color: $color_2;
+		border: 1px solid #ff0000;
+	}
+}
+.total2 {
+	grid-area: total2;
+	background-color: $background-color_3;
+	color: $color_1;
+	transition: all 1s ease-in;
+	&:hover {
+		background-color: $background-color_2;
+		color: $color_2;
+		border: 1px solid #ff0000;
+	}
+}
+.total3 {
+	grid-area: total3;
+	background-color: $background-color_3;
+	color: $color_1;
+	transition: all 1s ease-in;
+	&:hover {
+		background-color: $background-color_2;
+		color: $color_2;
+		border: 1px solid #ff0000;
+	}
+}
+.total4 {
+	grid-area: total4;
+	background-color: $background-color_3;
+	color: $color_1;
+	transition: all 1s ease-in;
+	&:hover {
+		background-color: $background-color_2;
+		color: $color_2;
+		border: 1px solid #ff0000;
+	}
+}
+.detail {
+	grid-area: detail;
+	overflow-x: auto;
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		tr {
+			&:nth-child(odd) {
+				background-color: $background-color_6;
+			}
+			background-color: $background-color_1;
+			&:hover {
+				background-color: $background-color_7;
+			}
+			td {
+				&:nth-child(2) {
+					min-width: 150px;
+				}
+				&:nth-child(3) {
+					min-width: 150px;
+				}
+			}
+		}
+		th {
+			padding: 0.8rem 0.2rem;
+			text-align: left;
+			min-width: 120px;
+			font-size: 14px;
+		}
+		td {
+			padding: 0.8rem 0.2rem;
+			text-align: left;
+			min-width: 120px;
+			font-size: 14px;
+		}
+	}
+}
+.customer {
+	grid-area: customer;
+	overflow-x: auto;
+}
+.info {
+	display: grid;
+	grid-auto-flow: column;
+	justify-items: space-between;
+	align-items: center;
+}
+.info-detail {
+	h2 {
+		font-size: 24px;
+	}
+	p {
+		font-size: 14px;
+	}
+}
+.info-image {
+	font-size: 50px;
+	color: $color_2;
+}
+.detail-header {
+	display: grid;
+	grid-auto-flow: column;
+	justify-items: space-between;
+	align-items: center;
+	button {
+		height: 30px;
+		width: 120px;
+		border: 1px solid #ff0000;
+		background-color: $background-color_3;
+		color: $color_4;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: all 0.2s ease-in;
+		&:hover {
+			background-color: $background-color_5;
+			color: $color_2;
+		}
+	}
+}
+.status {
+	padding: 0.3rem 1rem;
+	border-radius: 30px;
+	font-weight: 600;
+	letter-spacing: 1;
+	font-size: 0.7rem;
+}
+.customer-wrapper {
+	display: grid;
+	grid-template-columns: 0.3fr 1fr 0.4fr;
+	grid-auto-flow: column;
+	margin: 10px 0;
+	min-width: 230px;
+	align-items: flex-start;
+	gap: 5px;
+}
+.customer-image {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+.customer-name {
+	>p {
+		font-size: 0.9rem;
+	}
+}
+.customer-date {
+	font-size: 0.9rem;
+	text-align: right;
+	color: $color_5;
+}
+@media screen and (max-width: 1070px) {
+	.dashboard-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: "total1 total2 ""total3 total4" "detail detail" "customer customer";
+	}
+}
+@media screen and (max-width: 630px) {
+	.profile-name {
+		display: none;
+	}
+	.nav {
+		display: none;
+	}
+	main {
+		padding: 6rem 2rem 2rem 2rem;
+	}
+	#toggle {
+		&:checked {
+			~ {
+				.nav {
+					width: 200px;
+					display: block;
+					.nav-menu {
+						>p {
+							display: block;
+						}
+					}
+				}
+				main {
+					padding: 6rem 2rem 2rem 2rem;
+				}
+			}
+		}
+	}
+	.dashboard-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-areas: "total1" "total2" "total3" "total4" "detail" "customer";
+	}
+	.detail {
+		table {
+			font-size: 0.9rem;
+		}
+	}
+}

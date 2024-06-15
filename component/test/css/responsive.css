@@ -1,0 +1,53 @@
+/* Responsiveness */
+@media screen and (max-width: 1070px) {
+  .dashboard-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "total1 total2"
+      "total3 total4"
+      "detail detail"
+      "customer customer";
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .profile-name {
+    display: none;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  main {
+    padding: 6rem 2rem 2rem 2rem;
+  }
+
+  #toggle:checked ~ .nav {
+    width: 200px;
+    display: block;
+  }
+
+  #toggle:checked ~ .nav .nav-menu > a {
+    display: block;
+  }
+
+  #toggle:checked ~ main {
+    padding: 6rem 2rem 2rem 2rem;
+  }
+
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "total1"
+      "total2"
+      "total3"
+      "total4"
+      "detail"
+      "customer";
+  }
+
+  .detail table {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,48 @@
+/* Navigation */
+#toggle {
+  display: none;
+}
+
+.nav {
+  position: fixed;
+  height: 100%;
+  width: 200px;
+  left: 0;
+  top: 0;
+  padding: 80px 0 200px 0;
+  color: #fff;
+  background-color: #ff0000;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-menu > span {
+  font-size: 25px;
+  padding-right: 30px;
+}
+
+.nav-menu:hover {
+  color: #ff0000;
+  background-color: #f8f8f8;
+}
+
+/* Toggle navigation */
+#toggle:checked ~ .nav {
+  width: 70px;
+}
+
+#toggle:checked ~ .nav .nav-menu > a {
+  display: none;
+}
+
+#toggle:checked ~ main {
+  padding: 6rem 2rem 2rem 6rem;
+}
