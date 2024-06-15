@@ -15,11 +15,10 @@ Class Header{
        ?> 
         <header class="header">
             <h4><?php echo $this->title ?></h4>
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Recherche">
             <div class="profile">
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for company..">
-                <span class="fas fa-search"></span>
+            <p class="profile-name"><?php echo $this->name ?></p>
                 <img class="profile-image" alt="no avaible image" src=<?php echo $this->image ?>>
-                <p class="profile-name"><?php echo $this->name ?></p>
             </div>
         </header> 
        <?php

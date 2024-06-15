@@ -8,6 +8,7 @@
       require_once 'include\nav.php';
       require_once 'rencontres_table.php';
       require_once 'joueur.php';
+      require_once 'topcard.php';
 
       $title = 'Responsitive Dashboard Admin';
       $links = ['css/global.css', 'css/header.css', 'css/navigation.css', 
@@ -35,7 +36,7 @@
     <?php
     $data = [
       ["title" => 'général', "icon" => 'fa-clipboard-list', 'link' => 'index.php'],
-      ["title" => 'equipes', "icon" => 'fa-users', 'link' => 'index.php'],
+      ["title" => 'equipes', "icon" => 'fa-users', 'link' => 'equipes.php'],
       ["title" => 'rencontres', "icon" => 'fa-futbol', 'link' => 'index.php'],
       ["title" => 'joueurs', "icon" => 'fa-chart-line', 'link' => 'index.php'],
       ["title" => 'contact', "icon" => 'fa-id-card', 'link' => 'index.php'],
@@ -49,7 +50,18 @@
     
     <main>
       <div class="dashboard-container">
-        <?php 
+        <?php
+
+        $data = [
+          ['title' => 'Euro', 'first_numbers' => '', 'second_numbers' => '', 'paragraphe' => 'En cours', 'icon' => ''],
+          ['title' => 'Ligue des Champions', 'first_numbers' => '', 'second_numbers' => '', 'paragraphe' => 'Real Madrid', 'icon' => ''],
+          ['title' => "Coupe d'afrique des nations", 'first_numbers' => '', 'second_numbers' => '', 'paragraphe' => "Cote d'ivoire", 'icon' => ''],
+          ['title' => 'Copa america', 'first_numbers' => '', 'second_numbers' => '', 'paragraphe' => 'Bientot', 'icon' => '']
+        ];
+
+        $topCard = new TopCard($data);
+        $topCard->generateTopCard();
+
         $data = [
           ['domicile' => 'Paris-SG', 'score' => '4-1', 'exterieur' => 'Marseille', 'date' => 'Apr 11, 2021'],
           ['domicile' => 'Lyon', 'score' => '3-3', 'exterieur' => 'Lille', 'date' => 'Mar 29, 2021'],
@@ -62,16 +74,16 @@
         $detail -> generateTable();
 
         $data = [
-          ['image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScHTPNRs0U9vH08Jy5nKREMp8BqDwsMTUXjQ&s', 
-          'name' => 'Baggy', 'description' => 'Aux milles pieces', 'login' => 'Today'],
-          ['image' => 'https://img.wattpad.com/story_parts/1254730024/images/170858dbfeceef4b569029974783.gif', 'name' => 'Doflamingo', 
-          'description' => 'Joker', 'login' => 'Today'],
-          ['image' => 'https://pbs.twimg.com/media/ErXj7hSW8AckL_l.jpg', 
-          'name' => 'Teach', 'description' => 'Barbe noire', 'login' => 'Yesterday'],
-          ['image' => 'https://64.media.tumblr.com/001bdb860de2ea9bc9cc21fc6988f13b/d66cbcd97ae5ebef-43/s540x810/2187a41e09b8d1096783e166d83fbabe1019d592.jpg', 
-          'name' => 'Zoro', 'description' => 'Le chasseur de pirates', 'login' => 'Yesterday'],
-          ['image' => 'https://yzgeneration.com/wp-content/uploads/2022/04/One_Piece_1015_3.webp', 
-          'name' => 'Yamato', 'description' => 'La fille du demon', 'login' => 'Yesterday']
+          ['image' => 'https://img.olympics.com/images/image/private/t_1-1_300/f_auto/primary/ron2ny1sxmnrrqlxgnak', 
+          'name' => 'Kilian Mbappe', 'description' => 'Français', 'login' => 'Today'],
+          ['image' => 'https://img.a.transfermarkt.technology/portrait/big/418560-1709108116.png?lm=1', 'name' => 'Erling Haaland', 
+          'description' => 'Norvégien', 'login' => 'Today'],
+          ['image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg/800px-Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg', 
+          'name' => 'Cristiano Ronaldo', 'description' => 'Portugais', 'login' => 'Yesterday'],
+          ['image' => 'https://www.fifpro.org/media/fhmfhvkx/messi-world-cup.jpg?rxy=0.48356841796117644,0.31512414378031967&width=1600&height=1024&rnd=133210253587130000', 
+          'name' => 'Lionnel Messi', 'description' => 'Argentin', 'login' => 'Yesterday'],
+          ['image' => 'https://static.independent.co.uk/2024/06/12/12/newFile.jpg', 
+          'name' => 'Harry Kane', 'description' => 'Anglais', 'login' => 'Yesterday']
       ];
         $customer = new Joueur($data);
         $customer -> generateTable();
@@ -80,6 +92,5 @@
       </div>
     </main>
 
-    <script src="script.js"></script>
   </body>
 </html>

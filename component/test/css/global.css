@@ -5,6 +5,7 @@
   box-sizing: border-box;
   outline: none;
   font-family: "Poppins", sans-serif;
+  text-decoration: none;
 }
 
 body {
