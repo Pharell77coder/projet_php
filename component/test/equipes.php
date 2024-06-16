@@ -6,8 +6,7 @@
       require_once 'include\head.php';
       require_once 'include\header.php';
       require_once 'include\nav.php';
-      require_once 'rencontres_table.php';
-      require_once 'joueur.php';
+      require_once 'table_equipe.php';
 
       $title = 'Responsitive Dashboard Admin';
       $links = ['css/global.css', 'css/header.css', 'css/navigation.css', 
@@ -35,7 +34,7 @@
     <?php
     $data = [
       ["title" => 'général', "icon" => 'fa-clipboard-list', 'link' => 'index.php'],
-      ["title" => 'equipes', "icon" => 'fa-users', 'link' => 'index.php'],
+      ["title" => 'equipes', "icon" => 'fa-users', 'link' => 'equipes.php'],
       ["title" => 'rencontres', "icon" => 'fa-futbol', 'link' => 'index.php'],
       ["title" => 'joueurs', "icon" => 'fa-chart-line', 'link' => 'index.php'],
       ["title" => 'contact', "icon" => 'fa-id-card', 'link' => 'index.php'],

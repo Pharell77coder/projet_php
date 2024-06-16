@@ -15,10 +15,10 @@ class Joueur{
             <div class="customer-wrapper">
                 <img class="customer-image" alt="no avaible image" src=<?php echo $line['image'] ?>> 
                 <div class="customer-name">
-                <h4><?php echo $line['name'] ?></h4>
-                <p><?php echo $line['description'] ?></p>
+                <h4><?php echo $line['prenom'] ?> <?php echo $line['nom'] ?></h4>
+                <p><?php echo $line['nationalité'] ?></p>
                 </div>
-                <p class="customer-date"><?php echo $line['login'] ?></p>
+                <p class="customer-date"><?php echo $line['club'] ?></p>
             </div>
         <?php }; ?>
         </div>

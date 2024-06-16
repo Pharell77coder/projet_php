@@ -20,7 +20,7 @@ class Rencontres{
             <tbody>
                 <tr><td><?php echo $line['date'] ?></td>
                 <td><?php echo $line['domicile'] ?></td>
-                <td><?php echo $line['score'] ?></td>
+                <td><?php echo $line['score_dom'] ?>-<?php echo $line['score_ext'] ?></td>
                 <td><?php echo $line['exterieur'] ?></td></tr>
             </tbody>
         <?php }; ?>

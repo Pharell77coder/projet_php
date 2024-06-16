@@ -1,7 +1,6 @@
 <?php
 function create_table($table_name, $attributes) {
-    $dbFile = '../db/data.db';
-    $db = new SQLite3($dbFile);
+    $db = new SQLite3('database.db');
 
     $attributes_sql = implode(', ', $attributes);
 
@@ -13,8 +12,7 @@ function create_table($table_name, $attributes) {
 }
 
 function update_table($table_name, $values, $condition) {
-    $dbFile = '../db/data.db';
-    $db = new SQLite3($dbFile);
+    $db = new SQLite3('database.db');
 
     $values_sql = implode(', ', $values);
 
@@ -27,15 +25,11 @@ function update_table($table_name, $values, $condition) {
     //return $result;
 }
 
-
 function select_from_table($query) {
-    $dbFile = '../db/data.db';
-    $db = new SQLite3($dbFile);
+    $db = new SQLite3('database.db');
 
-    // Exécuter la requête SQL
     $result = $db->query($query);
 
-    // Récupérer les résultats de la requête
     $rows = [];
     while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
         $rows[] = $row;
@@ -48,8 +42,7 @@ function select_from_table($query) {
 
 
 function delete_from_table($query) {
-    $dbFile = '../db/data.db';
-    $db = new SQLite3($dbFile);
+    $db = new SQLite3('database.db');
 
     $result = $db->query($query);
 
@@ -59,8 +52,7 @@ function delete_from_table($query) {
 }
 
 function add_element($table_name, $data) {
-    $dbFile = '../db/data.db';
-    $db = new SQLite3($dbFile);
+    $db = new SQLite3('database.db');
 
     $columns = implode(', ', array_keys($data));
     $values = implode(', ', array_map(function($value) use ($db) {
@@ -77,8 +69,7 @@ function add_element($table_name, $data) {
 }
 
 function drop_table_if_exists($table_name) {
-    $dbFile = '../db/data.db';
-    $db = new SQLite3($dbFile);
+    $db = new SQLite3('database.db');
     $query = "DROP TABLE IF EXISTS $table_name";
     $db->exec($query);
     $db->close();

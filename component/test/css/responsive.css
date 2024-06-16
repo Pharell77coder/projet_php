@@ -24,11 +24,11 @@
   }
 
   #toggle:checked ~ .nav {
-    width: 200px;
+    width: 70px;
     display: block;
   }
 
-  #toggle:checked ~ .nav .nav-menu > a {
+  #toggle:checked ~ .nav .nav-menu > p {
     display: block;
   }
 

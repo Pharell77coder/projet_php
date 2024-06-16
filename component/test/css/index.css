@@ -1,0 +1,36 @@
+/* Main content */
+main {
+    min-height: 100%;
+    padding: 6rem 1rem 2rem 14rem;
+    color: #201f2b;
+  }
+  
+  /* Dashboard container */
+  .dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    grid-template-areas:
+      "total1 total2 total3 total4"
+      "detail detail detail customer"
+      "detail detail detail customer";
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
+  .total1, .total2, .total3, .total4 {
+    background-color: #ff0000;
+    color: #fff;
+    transition: all 1s ease-in;
+  }
+  
+  .total1:hover, .total2:hover, .total3:hover, .total4:hover {
+    background-color: #fff;
+    color: #ff0000;
+    border: 1px solid #ff0000;
+  }
+  

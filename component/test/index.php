@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <?php  
-      require_once "database.php";
+      require_once 'database.php';
       require_once 'include\head.php';
       require_once 'include\header.php';
       require_once 'include\nav.php';
@@ -12,7 +12,7 @@
 
       $title = 'Responsitive Dashboard Admin';
       $links = ['css/global.css', 'css/header.css', 'css/navigation.css', 
-      'css/main.css', 'css/detail.css', 'css/customer.css', 'css/responsive.css',
+      'css/index.css', 'css/detail.css', 'css/customer.css', 'css/responsive.css',
       'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css', 
       'https://fonts.googleapis.com/css2?family=Poppins&display=swap', 
       'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'];
@@ -23,9 +23,12 @@
   </head>
   <body>
   <?php
+
+    $query = "SELECT pseudo, image FROM utilisateur WHERE id = 1";
+    $utilisateur = select_from_table($query);
     $title = 'Dashboard';
-    $name = 'Pharell';
-    $image = 'https://pbs.twimg.com/media/FREjAjXXwAASCp7.jpg:large';
+    $name = $utilisateur[0]['pseudo'];
+    $image = $utilisateur[0]['image'];
     $header = new Header($title, $name, $image);
     $header->generateHeader();
   ?>
@@ -42,6 +45,7 @@
       ["title" => 'contact', "icon" => 'fa-id-card', 'link' => 'index.php'],
       ["title" => 'paramètre', "icon" => 'fa-cog', 'link' => 'settings.php']
     ];
+
     $nav = new Nav($data);
     $nav -> generateNav();
   ?>
@@ -62,15 +66,10 @@
         $topCard = new TopCard($data);
         $topCard->generateTopCard();
 
-        $data = [
-          ['domicile' => 'Paris-SG', 'score' => '4-1', 'exterieur' => 'Marseille', 'date' => 'Apr 11, 2021'],
-          ['domicile' => 'Lyon', 'score' => '3-3', 'exterieur' => 'Lille', 'date' => 'Mar 29, 2021'],
-          ['domicile' => 'Lille', 'score' => '2-4', 'exterieur' => 'Paris-SG', 'date' => 'Feb 10, 2020'],
-          ['domicile' => 'Marseille', 'score' => '1-2', 'exterieur' => 'Lyon', 'date' => 'Dec 11, 2020'],
-          ['domicile' => 'Paris-SG', 'score' => '3-2', 'exterieur' => 'Lyon', 'date' => 'Nov 20, 2020'],
-          ['domicile' => 'Marseille', 'score' => '1-3', 'exterieur' => 'Lille', 'date' => 'Nov 01, 2020']
-        ];
-        $detail = new Rencontres($data);
+        $query = "SELECT domicile, score_dom, score_ext, exterieur, date FROM matchs where id < 7";
+        $data_matchs = select_from_table($query);
+
+        $detail = new Rencontres($data_matchs);
         $detail -> generateTable();
 
         $data = [
@@ -85,7 +84,11 @@
           ['image' => 'https://static.independent.co.uk/2024/06/12/12/newFile.jpg', 
           'name' => 'Harry Kane', 'description' => 'Anglais', 'login' => 'Yesterday']
       ];
-        $customer = new Joueur($data);
+
+        $query = "SELECT nom, prenom, image, nationalité, club FROM joueurs";
+        $data_joueurs = select_from_table($query);
+
+        $customer = new Joueur($data_joueurs);
         $customer -> generateTable();
 
         ?>

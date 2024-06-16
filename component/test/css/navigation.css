@@ -44,8 +44,9 @@ a:hover, a:active { text-decoration: none; color:white; }
   width: 70px;
 }
 
-#toggle:checked ~ .nav .nav-menu > a {
+#toggle:checked ~ .nav .nav-menu > p {
   display: none;
+  opacity: 0;
 }
 
 #toggle:checked ~ main {
