@@ -15,7 +15,7 @@ class TopCard {
                     <div class="info-detail">
                         <h3><?php echo $line['title']; ?></h3>
                         <p><?php echo $line['paragraphe']; ?></p>
-                        <h2><?php echo $line['first_numbers']; ?><span><?php echo $line['second_numbers']; ?></span></h2>
+                        <h2><?php echo $line['first_numbers']; ?><span> <?php echo $line['second_numbers']; ?></span></h2>
                     </div>
                     <div class="info-image">
                         <i class="<?php echo $line['icon']; ?>"></i>

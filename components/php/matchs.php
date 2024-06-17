@@ -12,7 +12,7 @@ class Matchs{
         <div class="detail card">
         <div class="detail-header">
             <h2>Rencontres</h2>
-            <button onclick="window.location.href='settings.php';"> Voir Plus </button>
+            <button onclick="window.location.href='matchs_pages.php';"> Voir Plus </button>
           </div>
           <table>
           <tbody><tr><th>Date</th><th>Domicile</th><th>Score</th><th>Exterieur</th></tr></tbody>

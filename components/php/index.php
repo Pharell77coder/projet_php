@@ -56,10 +56,10 @@
         <?php
 
         $topdata = [
-          ['title' => 'Euro', 'first_numbers' => '', 'second_numbers' => '', 'paragraphe' => 'En cours', 'icon' => ''],
-          ['title' => 'Ligue des Champions', 'first_numbers' => '', 'second_numbers' => '', 'paragraphe' => 'Real Madrid', 'icon' => ''],
-          ['title' => "Coupe d'afrique des nations", 'first_numbers' => '', 'second_numbers' => '', 'paragraphe' => "Cote d'ivoire", 'icon' => ''],
-          ['title' => 'Copa america', 'first_numbers' => '', 'second_numbers' => '', 'paragraphe' => 'Bientot', 'icon' => '']
+          ['title' => "Coupe d'afrique des nations", 'first_numbers' => 'Cote ivoire', 'second_numbers' => '2024', 'paragraphe' => "Cote d'ivoire", 'icon' => 'fas fa-trophy'],
+          ['title' => 'Ligue des Champions', 'first_numbers' => 'Angleterre', 'second_numbers' => '2023-24', 'paragraphe' => 'Real Madrid', 'icon' => 'fas fa-trophy'],
+          ['title' => 'Euro', 'first_numbers' => 'Allemagne', 'second_numbers' => '2024', 'paragraphe' => 'En cours', 'icon' => 'fas fa-trophy'],
+          ['title' => 'Copa america', 'first_numbers' => 'Etats-Unis', 'second_numbers' => '2024', 'paragraphe' => 'Bientot', 'icon' => 'fas fa-trophy']
         ];
 
         $topCard = new TopCard($topdata);
