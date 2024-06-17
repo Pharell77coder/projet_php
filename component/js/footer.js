@@ -1,1 +1,0 @@
-const Footer = document.getElementById('footer').innerHTML = ``;
