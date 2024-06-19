@@ -25,6 +25,9 @@ trait tHead {
             <link rel='stylesheet' href="<?php echo htmlspecialchars($link); ?>" >
             <?php
         }
+        ?>
+        <link rel="stylesheet" href="theme.php">
+        <?php
     }
 }
 
