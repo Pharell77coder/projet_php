@@ -3,6 +3,8 @@ main {
     min-height: 100%;
     padding: 6rem 1rem 2rem 14rem;
     color: #201f2b;
+    transition: 0.3s;
+    
   }
   
 /* Dashboard container */

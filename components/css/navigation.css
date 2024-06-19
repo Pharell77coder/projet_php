@@ -13,6 +13,7 @@
   color: #fff;
   background-color: #ff0000;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
 }
 a { color:white; } 
 
