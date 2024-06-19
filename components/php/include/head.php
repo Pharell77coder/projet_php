@@ -1,41 +1,52 @@
 <?php
-    Class Head implements iGenerateHTML{
-        private $title;
-        private $links;
+interface iHead {
+    public function generateHTML();
+    public function generateCSSLink();
+}
 
-        public function __construct($title, $links){
-            $this->title = $title;
-            $this->links = $links;
-        }
+trait tHead {
+    public function metaTags() {
+        ?>
+        <meta charset='utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <meta name='author' content='Pharell'>
+        <?php
+    }
 
-        public function generateHTML(){
+    public function generateTitle($title) {
+        ?>
+        <title><?php echo htmlspecialchars($title); ?></title>
+        <?php
+    }
+
+    public function generateLinks($links) {
+        foreach ($links as $link) {
             ?>
-            <meta charset='utf-8' />
-            <meta name='viewport' content='width=device-width, initial-scale=1'>
-            <meta name='author' content='Pharell'>
-            <title><?php echo $this->title ?></title>
+            <link rel='stylesheet' href="<?php echo htmlspecialchars($link); ?>" >
             <?php
-            
-        }
-
-        public function generateCSSLink() {
-            foreach ($this->links as $link) {
-                ?>
-                    <link rel='stylesheet' href=<?php echo $link ?> >
-                <?php
-            };
         }
     }
+}
 
-    interface iGenerateHTML {
-        public function generateHTML();
+class Head implements iHead {
+    use tHead;
+
+    private $title;
+    private $links;
+
+    public function __construct($title, $links) {
+        $this->title = $title;
+        $this->links = $links;
     }
-    
-    /*
-      $title = 'title';
-      $links = ['style.css', 'item2', ...];
-      $head = new Head($title, $links);
-      $head->generateHTML();
-      $head->generateCSSLink();
-    */
+
+    public function generateHTML() {
+        $this->metaTags();
+        $this->generateTitle($this->title);
+    }
+
+    public function generateCSSLink() {
+        $this->generateLinks($this->links);
+    }
+}
+
 ?>

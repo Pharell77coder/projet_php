@@ -1,28 +1,38 @@
 <?php
+interface iEquipe {
+    public function generateTableEquipes();
+}
 
-class Equipe{
-    public $data;
+trait tEquipe {
+    public function renderEquipes($data) {
+        ?> 
+        <div class="card customer">
+            <h2>Equipes</h2>
+            <?php foreach ($data as $line) { ?>
+                <div class="customer-wrapper">
+                    <img class="customer-image" alt="no available image" src="<?php echo htmlspecialchars($line['image']); ?>"> 
+                    <div class="customer-name">
+                        <h4><?php echo htmlspecialchars($line['nom']); ?></h4>
+                        <p><?php echo htmlspecialchars($line['federation']); ?></p>
+                    </div>
+                    <p class="customer-date"><?php echo htmlspecialchars($line['confederation']); ?></p>
+                </div>
+            <?php } ?>
+        </div>
+        <?php
+    }
+}
+class Equipe implements iEquipe {
+    use tEquipe;
 
-    public function __construct($data){
+    private $data;
+
+    public function __construct($data) {
         $this->data = $data;
     }
 
-    public function generateTableEquipes(){
-        ?> 
-        <div class="card customer">
-        <h2>Equipes</h2>
-        <?php foreach ($this->data as $line) { ?>
-            <div class="customer-wrapper">
-                <img class="customer-image" alt="no avaible image" src=<?php echo $line['image'] ?>> 
-                <div class="customer-name">
-                <h4><?php echo $line['nom'] ?></h4>
-                <p><?php echo $line['federation'] ?></p>
-                </div>
-                <p class="customer-date"><?php echo $line['confederation'] ?></p>
-            </div>
-        <?php }; ?>
-        </div>
-        <?php
+    public function generateTableEquipes() {
+        echo $this->renderEquipes($this->data);
     }
 }
 

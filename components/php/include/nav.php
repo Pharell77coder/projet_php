@@ -1,17 +1,39 @@
 <?php 
 
-Class Nav{
+interface iNav {
+    public function generateNav();
+}
+
+trait tNav {
+    public function navContent($data) {
+        ob_start();
+        ?>
+        <nav class="nav">
+        <?php foreach ($data as $line) { ?>
+            <a href="<?php echo htmlspecialchars($line['link']); ?>">
+                <div class="nav-menu">
+                    <span class="fas <?php echo htmlspecialchars($line['icon']); ?>"></span>
+                    <p><?php echo htmlspecialchars($line['title']); ?></p>
+                </div>
+            </a>
+        <?php } ?>
+        </nav>
+        <?php
+        return ob_get_clean();
+    }
+}
+
+class Nav implements iNav {
+    use tNav;
+
     private $data;
 
-    public function __construct($data){
+    public function __construct($data) {
         $this->data = $data;
     }
 
-    public function generateNav(){
-        ?> <nav class="nav">
-        <?php foreach ($this->data as $line) { ?>
-            <a  href=<?php echo $line['link'] ?>><div class="nav-menu"><span class="fas <?php echo $line['icon'] ?>"></span><p><?php echo $line['title'] ?></p></div></a>
-        <?php  }; ?> </nav> <?php
+    public function generateNav() {
+        echo $this->navContent($this->data);
     }
 }
 ?>

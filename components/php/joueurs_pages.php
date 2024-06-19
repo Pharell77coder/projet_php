@@ -6,10 +6,11 @@
       require_once 'include\head.php';
       require_once 'include\header.php';
       require_once 'include\nav.php';
+      require_once 'include\footer.php';
       require_once 'joueurs.php';
 
       $title = 'Football Website';
-      $links = ['./../css/global.css', './../css/header.css', './../css/navigation.css', 
+      $links = ['./../css/global.css', './../css/header.css', './../css/navigation.css', './../css/footer.css', 
       './../css/main.css', './../css/customer.css', './../css/responsive.css',
       'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css', 
       'https://fonts.googleapis.com/css2?family=Poppins&display=swap', 
@@ -60,7 +61,10 @@
 
     ?>
     </main>
-
+    <?php 
+      $footer = new Footer;
+      $footer -> generateFooter();
+    ?>
     <!--<script src="script.js"></script>-->
   </body>
 </html>
