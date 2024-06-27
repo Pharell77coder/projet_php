@@ -35,3 +35,84 @@ main {
   color: #ff0000;
   border: 1px solid #ff0000;
 }
+
+
+/* contact */
+.contact-container {
+  max-width: 600px;
+  margin: 1rem auto;
+}
+
+.contact-container form {
+  display: grid;
+  gap: 10px;
+}
+
+.contact-container form label {
+  font-size: 0.9rem;
+}
+
+.contact-container form input,
+.contact-container form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-container form button {
+  width: 100px;
+  padding: 0.5rem;
+  border: none;
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-container form button:hover {
+  background-color: #e60000;
+}
+
+.contact-info {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* param */
+.settings-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.settings-container form {
+  display: grid;
+  gap: 10px;
+}
+
+.settings-container form label {
+  font-size: 0.9rem;
+}
+
+.settings-container form input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.settings-container form button {
+  width: 100px;
+  padding: 0.5rem;
+  border: none;
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.settings-container form button:hover {
+  background-color: #e60000;
+}
